@@ -1,0 +1,28 @@
+-Select the title
+-type  First name, Second name, email address, address, city postal code, contact number.
+-Select the hotel branch
+-Select the room (single, double, triple)
+-Select the check in and check out date
+-show the loyalty points as well
+-Select number of adults
+-Select number of children
+-Select the number of kids under 5 years old
+-Select the number of extra beds.
+-Enter the promo code
+- Click book now
+- Select Adventure type
+- Select tje duration 
+- Select the number of adults (Local)
+- Select the number of children (Local)
+- Select the number of adults (Foreign)
+- Select the number of children (Foreign)
+- Select the number of tour guides need for kids and adults.
+- Click book now
+- Proceed to pay now for that click "Pay now".
+- Select the payment method (Visa card, Mastercard.
+- Type the card number.
+- Select the expiry date 
+- Type CVV
+- Select submit 
+-If the payment is successful, the booking is confirmed and the booking must be displayed.
+-If click add to favourites button you can save your accommodation details.

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+
+
+
+    <section class="s-header">
+        <nav>
+            <a href="Mainpage.html"><img src="Images/Logo_black-removebg-preview.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Branches.html">Branches</a></li>
+                    <li><a href="Adventures.html">Adventures</a></li>
+                    <li><a href="Restaurents.html">Restaurents</a></li>
+                    <li><a href="Booking.html">Bookings</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <h1>Book Now</h1>
+    </section>
+</head>
+
+<body>
+    <main x-data="app">
+        <form x-on:submit.prevent="$store.user.updateUser">
+            <h2 class="h2" class="container mt-4">
+                Hotel booking
+            </h2>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <select class="form-control" id="Titel" x-model="$store.user.profile.title">
+                        <option value="">Select</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option value="Dr.">Dr.</option>
+                        <option value="Rev.">Rev.</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>First name</label>
+                        <input type="text" class="form-control" id="name1" x-model="$store.user.profile.f_name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Second name</label>
+                        <input type="text" class="form-control" id="name2" x-model="$store.user.profile.s_name">
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" class="form-control" id="nm" x-model="$store.user.profile.email">
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label>Addresss</label>
+                    <input type="text" class="form-control" id="name3" x-model="$store.user.profile.address">
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>City</label>
+                        <input type="text" class="form-control" id="name4" x-model="$store.user.profile.city">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Postal code</label>
+                        <input type="text" class="form-control" id="name5" x-model="$store.user.profile.zip_code">
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="number" class="form-control" id="name6" x-model="$store.user.profile.contact_number">
+                </div>
+            </div>
+            <hr>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label for="hotelBranch">Hotel Branch</label>
+                    <select class="form-control" id="hotelBranch" x-model="$store.user.booking.hotel_branch">
+                        <option value="">Select Hotel Branch</option>
+                        <option value="Grandeur Glade| Miami">Grandeur Glade | Miami</option>
+                        <option value="Grandeur Glade | Bali">Grandeur Glade | Bali</option>
+                        <option value="Grandeur Glade | Paris">Grandeur Glade | Paris</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="singleRoom">Single Room</label>
+                            <input type="number" id="singleRoom" class="form-control" min="0" max="99" step="1"
+                                x-model="$store.user.booking.single_room">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="doubleRoom">Double Room</label>
+                            <input type="number" id="doubleRoom" class="form-control" min="0" max="99" step="1"
+                                x-model="$store.user.booking.double_room">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tripleRoom">Triple Room</label>
+                            <input type="number" id="tripleRoom" class="form-control" min="0" max="99" step="1"
+                                x-model="$store.user.booking.triple_room">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="container mt-4">
+                    <div class="form-row">
+                        <div class="form-group col-md-6 date-picker">
+                            <label>Check-in Date</label>
+                            <input type="date" class="form-control" id="checkinDate" placeholder="dd/mm/yyyy"
+                                x-model="$store.user.booking.checkin_date">
+                        </div>
+
+
+                        <div class="form-group col-md-6 date-picker">
+                            <label>Check-out Date</label>
+                            <input type="date" class="form-control" id="checkoutDate" placeholder="dd/mm/yyyy"
+                                x-model="$store.user.booking.checkout_date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Number of Adults</label>
+                        <input type="number" class="form-control" min="0" max="99" step="1"
+                            x-model="$store.user.booking.adults">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Number of Children</label>
+                        <input type="number" class="form-control" min="0" max="99" step="1"
+                            x-model="$store.user.booking.children">
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Kids under 5 years old</label>
+                        <input type="number" class="form-control" min="0" max="99" x-model="$store.user.booking.kids">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Extra bed</label>
+                        <input type="number" class="form-control" min="0" max="99"
+                            x-model="$store.user.booking.Extra_bed">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container mt-4">
+                <div class="form-group col-md-4">
+                    <label>Promo Code</label>
+                    <input type="text" class="form-control" x-model="$store.user.booking.promo_code">
+                </div>
+            </div>
+            <div class="text-center">
+                <button style="width: 162px; height: 60px; background: rgba(8, 154, 176, 0.446);" x-on:click="cal_loyality_points">Book Accomadation</button>
+            </div>
+            <!-- <div class="ck">
+                <label>Extra items</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox1" value="option1" x-model="$store.user.booking.extra">
+                    <label class="form-check-label">Option 1</label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox2" value="option2" x-model="$store.user.booking.extra">
+                    <label class="form-check-label">Option 2</label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkbox3" value="option3" x-model="$store.user.booking.extra">
+                    <label class="form-check-label">Option 3</label>
+                </div>
+            </div> -->
+
+            <hr>
+
+            <h4>
+                Adventure Booking
+            </h4>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label for="adventureType">Adventure Type</label>
+                    <select class="form-control" id="adventureType" x-model="$store.user.adventure.adventure_type">
+                        <option value="">Select Adventure</option>
+                        <option value="Diving">Diving</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-group">
+                    <label for="duration">Duration</label>
+                    <select class="form-control" id="duration" x-model="$store.user.adventure.duration">
+                        <option value="">Select Duration</option>
+                        <option value="1 hour">1 hour</option>
+                        <option value="2 hours">2 hours</option>
+                        <option value="3 hours">3 hours</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="numberOfAdultsLocal">Number of Adults (Local)</label>
+                        <input type="number" class="form-control" id="numberOfAdultsLocal" min="0" max="99" step="1"
+                            x-model="$store.user.adventure.number_of_adults_local">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="numberOfChildrenLocal">Number of Children (Local)</label>
+                        <input type="number" class="form-control" id="numberOfChildrenLocal" min="0" max="99"
+                            x-model="$store.user.adventure.number_of_children_local">
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="numberOfAdultsForeign">Number of Adults (Foreign)</label>
+                        <input type="number" class="form-control" id="numberOfAdultsForeign" min="0" max="99"
+                            x-model="$store.user.adventure.number_of_adults_foreign">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="numberOfChildrenForeign">Number of Children (Foreign)</label>
+                        <input type="number" class="form-control" id="numberOfChildrenForeign" min="0" max="99"
+                            x-model="$store.user.adventure.number_of_children_foreign">
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-4">
+
+                <label for="tourGuides">Tour Guides <small class="text-danger font-weight-bold">(Note: Please provide
+                        the number of tour guides required
+                        for adventure)</small></label>
+            </div>
+            <br>
+            <div class="container mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Kids</label>
+                        <select class="form-control" id="number2" x-model="$store.user.adventure.tour_guide_kids">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Adults</label>
+                        <select class="form-control" id="number2" x-model="$store.user.adventure.tour_guide_adults">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="text-center">
+                <button style="width: 162px; height: 60px; background: rgba(8, 154, 176, 0.446);">Book Adventure</button>
+            </div>
+
+            <!-- <h3>Summary</h3> -->
+            <br>
+            <!-- <div class="container mt-4">
+                <div>
+                    <h4 class="mb-3"><u>Customer Details</u></h4>
+            
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><strong>Title:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.title"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>First Name:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.f_name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><Strong>Second Name:</Strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.s_name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>E-mail Address:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>Address:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.address"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><strong>City:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.city"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>Zip Code:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.zip_code"></span>
+                            </div>
+                            <div class="form-group">
+                                <label><strong>Contact Number:</strong></label>
+                                <span class="form-control-plaintext" x-text="$store.user.profile.contact_number"></span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="container mt-4">
+                        <h4 class="mb-4"><u>Accommodation Details</u></h4>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="hotelBranch"><strong>Hotel Branch:</strong></label>
+                                    <span class="form-control-plaintext" id="hotelBranch" x-text="$store.user.booking.hotel_branch"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkinDate"><strong>Check-in Date:</strong></label>
+                                    <span class="form-control-plaintext" id="checkinDate" x-text="$store.user.booking.checkin_date"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkoutDate"><strong>Check-out Date:</strong></label>
+                                    <span class="form-control-plaintext" id="checkoutDate" x-text="$store.user.booking.checkout_date"></span>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="singleRoom"><strong>Single Room:</strong></label>
+                                    <span class="form-control-plaintext" id="singleRoom" x-text="$store.user.booking.single_room"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="doubleRoom"><strong>Double Room:</strong></label>
+                                    <span class="form-control-plaintext" id="doubleRoom" x-text="$store.user.booking.double_room"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tripleRoom"><strong>Triple Room:</strong></label>
+                                    <span class="form-control-plaintext" id="tripleRoom" x-text="$store.user.booking.triple_room"></span>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="numAdults"><strong>Number of Adults:</strong></label>
+                                    <span class="form-control-plaintext" id="numAdults" x-text="$store.user.booking.adults"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numChildren"><strong>Number of Children:</strong></label>
+                                    <span class="form-control-plaintext" id="numChildren" x-text="$store.user.booking.children"></span>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="kidsUnder5"><strong>Kids under 5 years old:</strong></label>
+                                    <span class="form-control-plaintext" id="kidsUnder5" x-text="$store.user.booking.kids"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="extraBeds"><strong>Number of Extra beds:</strong></label>
+                                    <span class="form-control-plaintext" id="extraBeds" x-text="$store.user.booking.Extra_bed"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="promoCode"><strong>Promo Code:</strong></label>
+                                    <span class="form-control-plaintext" id="promoCode" x-text="$store.user.booking.promo_code"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="container mt-4">
+                        <h4 class="mb-4"><u>Adventure Details</u></h4>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="adventureType"><strong>Adventure Type:</strong></label>
+                                    <span class="form-control-plaintext" id="adventureType" x-text="$store.user.adventure.adventure_type"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="duration"><strong>Duration:</strong></label>
+                                    <span class="form-control-plaintext" id="duration" x-text="$store.user.adventure.duration"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numAdultsLocal"><strong>Number of Adults (Local):</strong></label>
+                                    <span class="form-control-plaintext" id="numAdultsLocal" x-text="$store.user.adventure.number_of_adults_local"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numChildrenLocal"><strong>Number of Children (Local):</strong></label>
+                                    <span class="form-control-plaintext" id="numChildrenLocal" x-text="$store.user.adventure.number_of_children_local"></span>
+                                </div>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="numAdultsForeign"><strong>Number of Adults (Foreign):</strong></label>
+                                    <span class="form-control-plaintext" id="numAdultsForeign" x-text="$store.user.adventure.number_of_adults_foreign"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numChildrenForeign"><strong>Number of Children (Foreign):</strong></label>
+                                    <span class="form-control-plaintext" id="numChildrenForeign" x-text="$store.user.adventure.number_of_children_foreign"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numTourGuidesKids"><strong>Number of Tour Guides (Kids):</strong></label>
+                                    <span class="form-control-plaintext" id="numTourGuidesKids" x-text="$store.user.adventure.tour_guide_kids"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="numTourGuidesAdults"><strong>Number of Tour Guides (Adults):</strong></label>
+                                    <span class="form-control-plaintext" id="numTourGuidesAdults" x-text="$store.user.adventure.tour_guide_adults"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <a href="/payment.html">Payment</a> -->
+            <hr>
+
+            <br>
+
+
+            <!-- Adeventure cost (Childern-Local) x <span x-text="$store.user.adventure.number_of_children_local"></span>
+            LKR <span x-text="$store.user.adventure.number_of_children_local * 2000"></span>.00
+            <br>
+            Adventure cost (Adults-Local) x <span x-text="$store.user.adventure.number_of_adults_local"></span>
+            LKR <span x-text="$store.user.adventure.number_of_adults_local * 5000"></span>.00
+            <br>
+            Adventure cost (Adults-Foreign) x <span x-text="$store.user.adventure.number_of_adults_foreign"></span>
+            LKR <span x-text="$store.user.adventure.number_of_adults_foreign * 10000"></span>.00
+            <br>
+            Adventure cost (Children-Foreign) x <span x-text="$store.user.adventure.number_of_children_foreign"></span>
+            LKR <span x-text="$store.user.adventure.number_of_children_foreign * 5000"></span>.00
+            <br>
+            Tour Guide (Kids) x <span x-text="$store.user.adventure.tour_guide_kids"></span>
+            LKR <span x-text="$store.user.adventure.tour_guide_kids * 500"></span>.00
+            <br>
+            Tour Guide (Adults) x <span x-text="$store.user.adventure.tour_guide_adults"></span>
+            LKR <span x-text="$store.user.adventure.tour_guide_adults * 1000"></span>.00 -->
+        </form>
+        <table class="payment_table">
+            <h3>Payment</h3>
+            <div class="ssss">
+                Name : <span x-text="$store.user.profile.title"></span> <span x-text="$store.user.profile.f_name"></span>
+                <span x-text="$store.user.profile.s_name"></span>
+                <br>
+                Check in Date : <span x-text="$store.user.booking.checkin_date"></span>
+                <br>
+                Check out Date : <span x-text="$store.user.booking.checkout_date"></span>
+                <br>
+                Loyality Points: <span x-text="loyality_points"></span>
+            </div>
+            <br>
+            <!-- <div class="sp">
+            Name : <span x-text="$store.user.profile.title"></span> <span x-text="$store.user.profile.f_name"></span> <span x-text="$store.user.profile.s_name"></span>
+            <br>
+            Check in Date : <span x-text="$store.user.booking.checkin_date"></span>
+            <br>
+            Check out Date : <span x-text="$store.user.booking.checkout_date"></span>
+            <br>
+            Loyality Points: <span x-text="loyality_points"></span>
+            </div> -->
+            <thead>
+                <tr>
+                    <th colspan="2" style="text-align: center; font-size: 20px;padding: 20px 0 5px 0; ">
+                        Accomadation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Single Room x <span x-text="$store.user.booking.single_room"></span></td>
+                    <td>LKR <span x-text="$store.user.booking.single_room * 25000"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Double Room x <span x-text="$store.user.booking.double_room"></span></td>
+                    <td>LKR <span x-text="$store.user.booking.double_room * 35000"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Triple Room x <span x-text="$store.user.booking.triple_room"></span></td>
+                    <td>LKR <span x-text="$store.user.booking.triple_room* 40000"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Extra Bed x <span x-text="$store.user.booking.Extra_bed"></span></td>
+                    <td>LKR <span x-text="$store.user.booking.Extra_bed * 8000"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Kids Above 5 Years old<br>(Extra for meals) x <span x-text="$store.user.booking.kids"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.booking.kids * 5000">.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Discount</td>
+                    <td>LKR <span x-text="$store.user.booking.total_discount"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Total of Accommodation</td>
+                    <td>LKR <span x-text="total_accommodation_cost"></span>.00</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th colspan="2" style="text-align: center; font-size: 20px; padding: 20px 0 5px 0;">
+                        Adventure</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>Adventure Type</td>
+                    <td><span x-text="$store.user.adventure.adventure_type"></span></td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td><span x-text="$store.user.adventure.duration"></span></td>
+                </tr>
+                <tr>
+                    <td>Local Adult x <span x-text="$store.user.adventure.number_of_adults_local"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.number_of_adults_local * 5000"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Local Child x <span x-text="$store.user.adventure.number_of_children_local"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.number_of_children_local * 2000"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Foreign Adult x <span x-text="$store.user.adventure.number_of_adults_foreign"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.number_of_adults_foreign * 10000"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Foreign Adult x <span x-text="$store.user.adventure.number_of_children_foreign"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.number_of_children_foreign * 5000"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Guide For Adult x
+                        <span x-text="$store.user.adventure.tour_guide_adults"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.tour_guide_adults * 1000"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Guide For Childern x <span x-text="$store.user.adventure.tour_guide_kids"></span>
+                    </td>
+                    <td>LKR <span x-text="$store.user.adventure.tour_guide_kids * 500"></span>.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total of Adventure</td>
+                    <td>LKR <span x-text="total_adventure_cost"></span>.00</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th colspan="2" style="text-align: center; font-size: 20px; padding: 20px 0 5px 0;">Cost
+                        of Booking</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>Total of Accommodation</td>
+                    <td>LKR <span x-text="total_accommodation_cost"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Total of Adventure</td>
+                    <td>LKR <span x-text="total_adventure_cost"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Total of Reservation</td>
+                    <td>LKR <span x-text="total_costss"></span>.00</td>
+                </tr>
+                <tr>
+                    <td>Total Discount</td>
+                    <td>LKR <span x-text="$store.user.booking.total_discount"></span>.00</td>
+                </tr>
+                <tr>
+                    <td><b>Final Total</b></td>
+                    <td>LKR <span x-text="$store.user.booking.final_total"></span>.00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+
+
+    </main>
+    
+    <br>
+    <div class="text-center">
+        <button style="width: 170px; height: 50px; background: rgba(8, 154, 176, 0.446);"><a href="payment.html">Pay
+                Now</a></button>
+    </div>
+
+    <script src="store/book.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data("app", () => ({
+                
+                coupons:[
+                    'Promo123',
+                ], 
+                
+                loyality_points: 0,
+
+                cal_loyality_points() {
+                    if (this.$store.user.booking.single_room >= 3) {
+                        this.loyality_points = parseInt(this.loyality_points) + 20;
+                    }
+                    if (this.$store.user.booking.double_room >= 3) {
+                        this.loyality_points = parseInt(this.loyality_points) + 20;
+                    }
+                    if (this.$store.user.booking.triple_room >= 3) {
+                        this.loyality_points = parseInt(this.loyality_points) + 20;
+                    }
+                    localStorage.setItem('loyality_points', this.loyality_points);
+                },
+
+                get total_adventure_cost(){
+                    let total = 0;
+                    total+= this.$store.user.adventure.number_of_adults_local * 5000;
+                    total+= this.$store.user.adventure.number_of_children_local * 10000;
+                    total+= this.$store.user.adventure.number_of_adults_foreign * 2000;
+                    total+= this.$store.user.adventure.number_of_children_foreign * 5000;
+                    total+= this.$store.user.adventure.tour_guide_kids * 500;
+                    total+= this.$store.user.adventure.tour_guide_adults * 1000;
+                    this.$store.user.booking.final_adventure_cost = total;
+                    return total;
+                },
+
+                get total_accommodation_cost(){
+                    let total = 0;
+                    total += this.$store.user.booking.single_room * 25000;
+                    total += this.$store.user.booking.double_room * 35000;
+                    total += this.$store.user.booking.triple_room * 40000;
+                    total += this.$store.user.booking.Extra_bed * 8000;
+                    total += this.$store.user.booking.kids * 5000;
+                    this.$store.user.booking.final_accomadation_cost = total;
+                    return total;
+                },
+
+                get total_costss(){
+                    let total = 0;
+                    total += this.total_accommodation_cost;
+                    total += this.total_adventure_cost;
+                    this.$store.user.booking.total_cost = total;
+
+                    this.$store.user.booking.total_discount = total * (this.$store.user.booking.discount_percentage/100);
+
+                    this.$store.user.booking.final_total = total - this.$store.user.booking.total_discount;
+
+
+
+                    return total;
+
+                },
+
+
+                init() {
+                    if (localStorage.getItem('loyality_points') != null) {
+                        this.loyality_points = localStorage.getItem('loyality_points');
+                    }
+                    this.$watch('$store.user.booking.promo_code',(value)=>{
+                        if (this.coupons.includes(value)){
+                            this.$store.user.booking.discount_percentage = 5;
+                        } else {
+                            this.$store.user.booking.discount_percentage=0;
+                        }
+                    });
+                },
+
+
+
+            }));
+        })
+    </script>
+</body>
+<style>
+    h2 {
+        text-align: center;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .ssss {
+        margin-left:3px;
+        padding-top: 60px;
+    }
+
+    .room-container {
+        width: calc(33.33% - 10px);
+        margin-right: 10px;
+        box-sizing: border-box;
+    }
+
+    .room-container:last-child {
+        margin-right: 0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+
+</html>

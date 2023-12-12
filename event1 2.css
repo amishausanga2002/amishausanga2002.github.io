@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(15, 15, 26, 0.7),rgba(15, 15, 26, 0.7)),url(Images/ama-dablam-mountain-peak-view-from-chola-pass-royalty-free-image-1623254695.jpg);
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+
+}
+body,html{
+    overflow-x: hidden;
+}
+
+.nvb{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.nvl{
+   display: flex;
+   align-items: center;
+
+}
+
+.nvl li{
+    margin: 0 30px;
+
+}
+
+
+.hd-cn{
+    margin-bottom: 150px;
+    color: white;
+    text-align: center;
+}
+
+.hd-cn h2{
+    font-size: 4vmin;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(Images/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+.hd-cn h1{
+    font-size: 7vmin;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(Images/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+
+}
+
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+
+.bttn{
+    padding:8px 15px;
+    background: #7cf4f8b6;
+    border-radius: 30px;
+    color: white;
+}
+
+.nvb img{
+     width: 170px;
+} 
+
+
+
+
+
+/*--upcoming--*/
+section {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the title */
+.title h1 {
+    color: #040404; /* Red text color */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Style the individual containers */
+.m1, .m2 {
+    background-color: #f6f5ef; /* Yellow background */
+    border: 1px solid #e8e7e5; /* Yellow border */
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.m1, .m2 img {
+    
+    border: 1px solid hsl(7, 28%, 83%); /* Red border around images */
+}
+
+/* Style the headings and paragraphs */
+h3 {
+    color: #151718; /* Blue text color */
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+p {
+    color: #333; /* Dark gray text color */
+    font-size: 16px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #80c5f9; /* Red button color */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    background-color: #eeb5b5; /* Darker red on hover */
+}
+
+.back-button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hover effect for the button */
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+@media (max-width: 768px) {
+    .nvl {
+        display: none; /* Hide the navigation links */
+    }
+
+    .bttn {
+        margin-top: 20px; /* Add space below the button */
+    }
+
+    /* Adjust the width of the images */
+    .m1 img,
+    .m2 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+/*--footer--*/
+.footer {
+    background-color: #f7efef;
+    color: #050505;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px 0;
+    }
+}
+
+

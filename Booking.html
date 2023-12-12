@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandeur Glade Hotel | Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+<body>
+    <section class="s-header">
+        <nav>
+            <a href="Mainpage.html"><img src="Images/Logo_black-removebg-preview.png"></a>
+            <div class="nav-links" id="navLinks">
+                  <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="Branches.html">Branches</a></li> 
+                <li><a href="Adventures.html">Adventures</a></li> 
+                <li><a href="Restaurents.html">Restaurents</a></li> 
+                <li><a href="Booking.html">Bookings</a></li> 
+            </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> 
+        </nav>
+     
+        <h1>Bookings</h1>
+</section>
+<br><br>
+<div class="bk_head">
+    <h3>BOOK YOUR STAYING FROM HERE!</h3>
+
+</div>
+<br><br>
+<div class="p">
+    <p><center>Indulge in unparalleled luxury and book your stay at Grandeur Glade Hotel where opulent comfort meets breathtaking elegance, <br>ensuring an unforgettable experience tailored just for you.</center></p>
+</div>
+<br><br><br><br>
+<hr>
+<br><br><br><br>
+<section class="booking_ht">
+    <div class="bok">
+        <img src="Images/Hotel 3.avif" alt="2" width="600px">
+        <h4>Grandeur Glade | Miami hotel</h4>
+        <div>
+            <p>Location - Miami, USA</p>
+        </div>
+
+    </div>
+    <div class="bok">
+        <img src="Images/Hotel 2.jpg" alt="3" width="600px">
+        <h4>Grandeur Glade | Paris hotel</h4>
+        <div>
+            <p>Location - Paris , France</p>
+        </div>
+
+    </div>
+    <div class="bok">
+        <img src="Images/intercontinental-ras-al-khaimah-7521885002-original.avif" alt="4" width="600px">
+        <h4>Grandeur Glade | Bali hotel</h4>
+        <div>
+            <p>Location - Bali , Indonesia</p>
+        </div>
+
+    </div>
+
+</section>
+<br><br><br><br>
+<section>
+    <div class="bk_btn">
+        <button class="book-now-btn"><a href="booknow.html">Book now</a></button>
+    </div>
+</section>
+
+
+
+
+      
+<!--Footer-->
+<section>
+    <div class="footer">
+        <div class="c-1">
+            
+            <a href="index.html">Home</a>
+            <a href="Branches.html">Branches</a>
+            <a href="Adventures.html">Adventures</a>
+            <a href="Restaurents.html">Restaurents</a>
+            <a href="event.html">ElectroFusion Feast</a>
+            <a href="event1.html">Wanderlust Explorer</a>
+            <a href="Booking.html">Bookings</a>
+        </div>
+        <div class="c-2">
+            <form>
+                <input type="text" placeholder="Mail us for Enquaries">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="c-3">
+            <h3>Follow us on</h3>
+          <div class="icn">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+          </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+    navLinks.style.right = "0";
+    } 
+
+    function hideMenu(){
+    navLinks.style.right = "-200px";
+    } 
+
+</script>
+<script src="/store/booking.js"></script>
+    <script src="/store/accommodation.js"></script>
+    <script src="/store/adventures.js"></script>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('app', () => ({
+                
+            }));
+        })
+    </script>
+
+
+</body>
+</html>
+

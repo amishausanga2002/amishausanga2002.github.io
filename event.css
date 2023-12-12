@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+}
+.header1{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Images/desktop-wallpaper-party-dj-party.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 170px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.des-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.des-box h1{
+    font-size: 70px;
+}
+.des-box p{
+    margin: 10px 0 40px;
+    font-size: 44px;
+    color: #fff;
+}
+
+.des-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.des-btn:hover{
+    border: 1px solid #44c4f7;
+    background: #44c4f7;
+    transition: 1s;
+}
+
+@media(max-width: 700px){
+    .des-box h1{
+        font-size: 38px;
+    }
+
+    .des-box p{
+        font-size: 15px;
+    }
+}
+
+.ev{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    
+
+}
+
+h1{
+    font-size: 37px;
+    font-weight: 600;
+}
+
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content:space-between ;
+}
+.ev-col{
+    flex-basis: 31%;
+    background: #d5dff6;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.ev-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.id{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.img-grid{
+    --gap:16px;
+    --num-cols:4;
+    --row-height:300px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols),1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.img-grid > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-grid-col-2{
+     grid-column: span 2;
+}
+
+.img-grid-row-2{
+    grid-row: span 2;
+}
+.back-button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+
+/* Hover effect for the button */
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.anime{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+    
+}
+
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .ev {
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .ev-col {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+/*--footer--*/
+
+.footer {
+    background-color: #f7efef;
+    color: #050505;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px 0;
+    }
+}
+
