@@ -101,6 +101,7 @@
                 </div>
             </div>
             <hr>
+            <!--Accomadation-->
             <div class="container mt-4">
                 <div class="form-group">
                     <label for="hotelBranch">Hotel Branch</label>
@@ -117,7 +118,7 @@
                 <div class="d-flex justify-content-between">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="singleRoom">Single Room</label>
+                            <label for="singleRoom">Single Room - LKR 25,000</label>
                             <input type="number" id="singleRoom" class="form-control" min="0" max="99" step="1"
                                 x-model="$store.user.booking.single_room">
                         </div>
@@ -125,7 +126,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="doubleRoom">Double Room</label>
+                            <label for="doubleRoom">Double Room - LKR 35,000</label>
                             <input type="number" id="doubleRoom" class="form-control" min="0" max="99" step="1"
                                 x-model="$store.user.booking.double_room">
                         </div>
@@ -133,7 +134,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="tripleRoom">Triple Room</label>
+                            <label for="tripleRoom">Triple Room - LKR 40,000</label>
                             <input type="number" id="tripleRoom" class="form-control" min="0" max="99" step="1"
                                 x-model="$store.user.booking.triple_room">
                         </div>
@@ -177,11 +178,11 @@
             <div class="container mt-4">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label>Kids under 5 years old</label>
+                        <label>Kids under 5 years old - LKR 5,000 (For extra meals) </label>
                         <input type="number" class="form-control" min="0" max="99" x-model="$store.user.booking.kids">
                     </div>
                     <div class="form-group col-md-6">
-                        <label>Extra bed</label>
+                        <label>Extra bed - LKR 8,000</label>
                         <input type="number" class="form-control" min="0" max="99"
                             x-model="$store.user.booking.Extra_bed">
                     </div>
@@ -741,9 +742,9 @@
         text-align: center;
     }
 
-    .ssss {
-        margin-left:3px;
-        padding-top: 60px;
+    .ssss{
+        padding-left: 600px;
+        padding-top: 40px;
     }
 
     .room-container {
